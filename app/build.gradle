@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$rootProject.ext.kotlinVersion"
+    testImplementation 'junit:junit:4.12'
+
+    implementation rootProject.ext.androidSupport.appcompat
+    implementation rootProject.ext.androidSupport.annotations
+    implementation rootProject.ext.androidSupport.design
+    implementation rootProject.ext.network.retrofit
+    implementation rootProject.ext.network.adapterRxjava2
+    implementation rootProject.ext.network.loggerInterceptor
+    implementation rootProject.ext.lifecycle.extensions
+    implementation rootProject.ext.lifecycle.room
+    implementation rootProject.ext.lifecycle.roomRxjava
+    implementation rootProject.ext.rx.rxJava
+    implementation rootProject.ext.rx.rxAndroid
+    implementation rootProject.ext.rx.rxLifecycle2
+    implementation rootProject.ext.ui.constraint
+    implementation rootProject.ext.ui.recycler
+    implementation rootProject.ext.ui.glide
+    implementation rootProject.ext.ui.glideTransform
+    implementation rootProject.ext.ui.photoView
+    implementation rootProject.ext.ui.superTextView
+    implementation rootProject.ext.ui.materialedit
+    implementation rootProject.ext.ui.flycoTab
+    implementation rootProject.ext.ui.matisse
+    implementation rootProject.ext.other.fragmentation
+    implementation rootProject.ext.other.eventbus
+    implementation rootProject.ext.other.fastjson
+    implementation rootProject.ext.other.utilcode
+    implementation rootProject.ext.di.dagger2
+    implementation "com.squareup.retrofit2:converter-gson:2.4.0"
+    implementation rootProject.ext.di.dagger2Support
+    kapt rootProject.ext.kapts.glide
+    kapt rootProject.ext.kapts.dagger2processor
+    kapt rootProject.ext.kapts.dagger2Compiler
+    kapt rootProject.ext.kapts.roomCompiler
+    androidTestImplementation rootProject.ext.test.runner
+    androidTestImplementation rootProject.ext.test.espresso
+}

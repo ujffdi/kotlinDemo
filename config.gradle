@@ -1,0 +1,130 @@
+ext {
+
+    kotlinVersion = "1.2.61"
+
+    //项目配置文件
+    android = [
+            compileSdkVersion : 28,
+            applicationId     : "com.tongsr.kotlindemo",
+            buildToolsVersion : "28.0.0",
+            minSdkVersion     : 15,
+            targetSdkVersion  : 23,
+            versionCode       : 1,
+            versionName       : "1.0",
+    ]
+
+    dependVersion = [
+            supportSDK        : "28.0.0",
+
+            //rx
+            rxJava            : "2.1.14",
+            rxAndroid         : "2.0.2",
+            rxLifecycle       : "2.2.1",
+            arch              : "1.1.1",
+            room              : "1.1.0",
+
+            //kotlin
+            ktx               : "1.0.0-alpha1",
+
+            //network
+            retrofit          : "2.4.0",
+            converterFastjson : "2.1.0",
+            oklog             : "3.10.0",
+
+            //ui
+            constraint        : "1.1.3",
+            recycler          : "2.9.40",
+            glide             : "4.7.1",
+            glideTransform    : "3.3.0",
+            photoView         : "2.1.4",
+            superTextView     : "2.1.7",
+            materialedit      : "2.1.4",
+            flycoTab          : "2.1.2@aar",
+            matisse           : "0.5.2-beta2",
+
+            //di
+            dagger2           : "2.16",
+
+            //other
+            fragmentation     : "1.3.5",
+            utilcode          : "1.20.0",
+            eventbus          : "3.1.1",
+            fastjson          : "1.1.70.android",
+            luban             : "1.1.8",
+
+            //test
+            runner            : "1.0.2",
+            espresso          : "3.0.2",
+    ]
+
+    androidSupport = [
+            appcompat         : "com.android.support:appcompat-v7:$dependVersion.supportSDK",
+            annotations       : "com.android.support:support-annotations:$dependVersion.supportSDK",
+            design            : "com.android.support:design:$dependVersion.supportSDK",
+    ]
+
+    network = [
+            retrofit          : "com.squareup.retrofit2:retrofit:$dependVersion.retrofit",
+            adapterRxjava2    : "com.squareup.retrofit2:adapter-rxjava2:$dependVersion.retrofit",
+            loggerInterceptor : "com.squareup.okhttp3:logging-interceptor:$dependVersion.oklog"
+    ]
+
+    rx = [
+            rxJava            : "io.reactivex.rxjava2:rxjava:$dependVersion.rxJava",
+            rxAndroid         : "io.reactivex.rxjava2:rxandroid:$dependVersion.rxAndroid",
+            rxLifecycle2      : "com.trello.rxlifecycle2:rxlifecycle-components:$dependVersion.rxLifecycle",
+    ]
+
+    kotlin = [
+            ktx               : "androidx.core:core-ktx:$dependVersion.ktx"
+    ]
+
+    lifecycle = [
+            runtime           : "android.arch.lifecycle:runtime:$dependVersion.arch",
+            extensions        : "android.arch.lifecycle:extensions:$dependVersion.arch",
+            room              : "android.arch.persistence.room:runtime:$dependVersion.arch",
+            roomRxjava        : "android.arch.persistence.room:rxjava2:$dependVersion.room",
+            roomTest          : "android.arch.persistence.room:testing:$dependVersion.room"
+    ]
+
+    ui = [
+            constraint        : "com.android.support.constraint:constraint-layout:$dependVersion.constraint",
+            cardview          : "com.android.support:cardview-v7:$dependVersion.supportSDK",
+            recycler          : "com.github.CymChad:BaseRecyclerViewAdapterHelper:$dependVersion.recycler",
+            glide             : "com.github.bumptech.glide:glide:$dependVersion.glide",
+            glideTransform    : "jp.wasabeef:glide-transformations:$dependVersion.glideTransform",
+            photoView         : "com.github.chrisbanes:PhotoView:$dependVersion.photoView",
+            superTextView     : "com.github.lygttpod:SuperTextView:$dependVersion.superTextView",
+            materialedit      : "com.rengwuxian.materialedittext:library:$dependVersion.materialedit",
+            flycoTab          : "com.flyco.tablayout:FlycoTabLayout_Lib:$dependVersion.flycoTab",
+            matisse           : "com.zhihu.android:matisse:$dependVersion.matisse",
+    ]
+
+    other = [
+            fragmentation     : "me.yokeyword:fragmentation-core:$dependVersion.fragmentation",
+            eventbus          : "org.greenrobot:eventbus:$dependVersion.eventbus",
+            fastjson          : "com.alibaba:fastjson:$dependVersion.fastjson",
+            luban             : "top.zibin:Luban:$dependVersion.luban",
+            utilcode          : "com.blankj:utilcode:$dependVersion.utilcode",
+    ]
+
+    test = [
+            runner            : "com.android.support.test:runner:$dependVersion.runner",
+            espresso          : "com.android.support.test.espresso:espresso-core:$dependVersion.espresso"
+    ]
+
+    di = [
+            dagger2           : "com.google.dagger:dagger-android:$dependVersion.dagger2",
+            dagger2Runtime    : "com.google.dagger:dagger:$dependVersion.dagger2",
+            dagger2Support    : "com.google.dagger:dagger-android-support:$dependVersion.dagger2"
+    ]
+
+    //apt单独处理
+    kapts = [
+            glide             : "com.github.bumptech.glide:compiler:$dependVersion.glide",
+            lifecycleCompiler : "android.arch.lifecycle:compiler:$dependVersion.arch",
+            roomCompiler      : "android.arch.persistence.room:compiler:$dependVersion.room",
+            dagger2processor  : "com.google.dagger:dagger-android-processor:$dependVersion.dagger2",
+            dagger2Compiler   : "com.google.dagger:dagger-compiler:$dependVersion.dagger2"
+    ]
+}
