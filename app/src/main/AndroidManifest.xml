@@ -26,6 +26,9 @@
         <activity android:name=".ui.large.LargeActivity"
             android:screenOrientation="sensor"/>
 
+        <activity android:name=".ui.GirlActivity"
+            android:screenOrientation="sensor"/>
+
     </application>
 
 </manifest>
